@@ -35,28 +35,27 @@ let active = 1;
 for (let key in items) {
 
     
-    let itemsObjects = items[key];
-    
-
-    for (let i = 0; i < itemsObjects.length; i++) {
+    let itemsObject = items[key];
+    console.log(itemsObject);
 
         item += `
             <div class="item">
-                <img src="${itemsObject[i].photo}" alt="">
+                <img src="${itemsObject.photo}" alt="">
                 <div class="text">
-                    <h3>${itemsObject[i].title}</h3>
-                    <p>${itemsObject[i].text}</p>
+                    <h3>${itemsObject.title}</h3>
+                    <p>${itemsObject.text}</p>
                 </div>
             </div>`
         thumb += `
             <div class="thumb">
-                <img src="${itemsObject[i].photo}" alt="">
-            </div>`
-    }
+                <img src="${itemsObject.photo}" alt="">
+            </div>` 
+    
 }
 
 
 itemsRef.innerHTML = item;
+console.log(document.getElementsByClassName('item'));
 document.getElementsByClassName('item')[active].classList.add('active');
 
 thumbsRef.innerHTML += thumb;
